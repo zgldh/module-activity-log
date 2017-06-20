@@ -1,3 +1,3 @@
-<router-link tag="li" to="/actionlog" exact>
-    <a><i class="fa fa-circle-o"></i>操作记录</a>
+<router-link tag="li" to="/action-log" exact>
+    <a><i class="fa fa-circle-o"></i> <span>操作记录</span></a>
 </router-link>

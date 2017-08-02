@@ -16,7 +16,7 @@ class ActionLogController extends AppBaseController
     public function __construct(ActionLogRepository $actionlogRepo)
     {
         $this->repository = $actionlogRepo;
-        $this->middleware("auth:admin");
+        $this->middleware("auth");
     }
 
     /**
@@ -27,13 +27,9 @@ class ActionLogController extends AppBaseController
      */
     public function index(IndexRequest $request)
     {
-        if ($request->ajax()) {
-            $with = $request->getWith();
-            $data = $this->repository->datatables(null, $with);
-            return $data;
-        } else {
-            return view('WoXuanWang\ActionLog::index');
-        }
+        $with = $request->getWith();
+        $data = $this->repository->datatables(null, $with);
+        return $data;
     }
 
     /**
@@ -46,9 +42,10 @@ class ActionLogController extends AppBaseController
     {
         $input = $request->all();
 
-        $actionlog = $this->repository->create($input);
+        $actionLog = $this->repository->create($input);
+        $actionLog->load($request->getWith());
 
-        return $this->sendResponse($actionlog, 'ActionLog saved successfully.');
+        return $this->sendResponse($actionLog, 'ActionLog saved successfully.');
     }
 
     /**
@@ -60,14 +57,14 @@ class ActionLogController extends AppBaseController
      */
     public function show($id, ShowRequest $request)
     {
-        $this->repository->with($request->getWith());
-        $actionlog = $this->repository->findWithoutFail($id);
+        $actionLog = $this->repository->findWithoutFail($id);
+        $actionLog->load($request->getWith());
 
-        if (empty($actionlog)) {
+        if (empty($actionLog)) {
             return $this->sendError('ActionLog not found');
         }
 
-        return $this->sendResponse($actionlog, '');
+        return $this->sendResponse($actionLog, '');
     }
 
     /**
@@ -80,15 +77,16 @@ class ActionLogController extends AppBaseController
      */
     public function update($id, UpdateActionLogRequest $request)
     {
-        $actionlog = $this->repository->findWithoutFail($id);
+        $actionLog = $this->repository->findWithoutFail($id);
 
-        if (empty($actionlog)) {
+        if (empty($actionLog)) {
             return $this->sendError('ActionLog not found');
         }
 
-        $actionlog = $this->repository->update($request->all(), $id);
+        $actionLog = $this->repository->update($request->all(), $id);
+        $actionLog->load($request->getWith());
 
-        return $this->sendResponse($actionlog, 'ActionLog updated successfully.');
+        return $this->sendResponse($actionLog, 'ActionLog updated successfully.');
     }
 
     /**
@@ -100,13 +98,13 @@ class ActionLogController extends AppBaseController
      */
     public function destroy($id)
     {
-        $actionlog = $this->repository->findWithoutFail($id);
+        $actionLog = $this->repository->findWithoutFail($id);
 
-        if (empty($actionlog)) {
+        if (empty($actionLog)) {
             return $this->sendError('ActionLog not found');
         }
 
         $this->repository->delete($id);
-        return $this->sendResponse($actionlog, 'ActionLog deleted successfully.');
+        return $this->sendResponse($actionLog, 'ActionLog deleted successfully.');
     }
 }

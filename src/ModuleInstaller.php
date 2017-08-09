@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Artisan;
 use zgldh\Scaffold\Installer\ModuleInstaller as BaseInstaller;
+use zgldh\Scaffold\Installer\Utils;
 
 /**
  * Created by PhpStorm.
@@ -25,6 +26,10 @@ class ModuleInstaller extends BaseInstaller
         $this->addRoute('ActionLog');
         $this->addToVueRoute('ActionLog');
         $this->addAdminMenuItem($this->getModuleTemplateContent('menu.blade.php'));
+
+        // Dependencies
+        Utils::addServiceProvider('Jenssegers\Agent\AgentServiceProvider::class');
+        Utils::addAlias('Agent', 'Jenssegers\Agent\Facades\Agent::class');
 
         // Publish migrations
         $this->publishMigration('CreateActionLogsTable', __DIR__ . '/../migrations/create_action_logs_table.php');

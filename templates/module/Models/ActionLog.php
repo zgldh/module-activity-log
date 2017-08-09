@@ -1,7 +1,7 @@
 <?php namespace $NAME$\ActionLog\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use $NAME$\User\Models\Admin;
+use $NAME$\User\Models\User;
 
 /**
  * Class ActionLog
@@ -47,6 +47,6 @@ class ActionLog extends Model
      **/
     public function user()
     {
-        return $this->hasOne(Admin::class, 'created_by', 'id');
+        return $this->hasOne(User::class, 'created_by', 'id');
     }
 }

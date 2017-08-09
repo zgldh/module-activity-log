@@ -27,18 +27,19 @@
         <div class="box-body datatable-loading-section">
           <div class="search">
             <el-form :inline="true" :model="searchForm" ref="searchForm">
-              <el-form-item label="Name">
-                <el-input v-model="searchForm.name" placeholder="Name" column="name" operator="like"></el-input>
-              </el-form-item>
-              <el-form-item label="Description">
-                <el-input v-model="searchForm.description" placeholder="Description" column="description"
-                          operator="like"></el-input>
-              </el-form-item>
               <el-form-item label="Type">
                 <el-input v-model="searchForm.type" placeholder="Type" column="type" operator="like"></el-input>
               </el-form-item>
-              <el-form-item label="Disk">
-                <el-input v-model="searchForm.disk" placeholder="Disk" column="disk" operator="like"></el-input>
+              <el-form-item label="Content">
+                <el-input v-model="searchForm.content" placeholder="Content" column="content"
+                          operator="like"></el-input>
+              </el-form-item>
+              <el-form-item label="Ip">
+                <el-input v-model="searchForm.ip" placeholder="Ip" column="ip" operator="like"></el-input>
+              </el-form-item>
+              <el-form-item label="Agent">
+                <el-input v-model="searchForm.user_agent" placeholder="User_agent" column="user_agent"
+                          operator="like"></el-input>
               </el-form-item>
               <el-form-item label="Created At">
                 <el-date-picker
@@ -179,9 +180,10 @@
           order: [{column: 'created_at', dir: 'desc'}],
         },
         searchForm: {
-          name: null,
-          description: null,
-          disk: null,
+          type: null,
+          content: null,
+          ip: null,
+          user_agent: null,
           created_at: null
         }
       };

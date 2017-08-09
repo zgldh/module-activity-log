@@ -1,3 +1,3 @@
 export default [
-  {path: '/actionlog', component: () => System.import('./AppPage.vue')},
+  {path: '/action-log', component: () => System.import('./AppPage.vue')},
 ];

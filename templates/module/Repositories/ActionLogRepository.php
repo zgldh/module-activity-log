@@ -1,8 +1,6 @@
-<?php
+<?php namespace $NAME$\ActionLog\Repositories;
 
-namespace WoXuanWang\ActionLog\Repositories;
-
-use WoXuanWang\ActionLog\Models\ActionLog;
+use $NAME$\ActionLog\Models\ActionLog;
 use zgldh\Scaffold\BaseRepository;
 
 class ActionLogRepository extends BaseRepository

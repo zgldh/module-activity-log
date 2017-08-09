@@ -1,8 +1,6 @@
-<?php namespace WoXuanWang\ActionLog;
+<?php namespace $NAME$\ActionLog;
 
-use Illuminate\Support\ServiceProvider;
-
-class ActionLogServiceProvider extends ServiceProvider
+class ActionLogServiceProvider extends \zgldh\ModuleActionLog\ActionLogServiceProvider
 {
 
     /**
@@ -25,6 +23,6 @@ class ActionLogServiceProvider extends ServiceProvider
     {
         //
         $this->loadViewsFrom(__DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'views',
-            'WoXuanWang\ActionLog');
+            '$NAME$\ActionLog');
     }
 }

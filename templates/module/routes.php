@@ -1,4 +1,4 @@
 <?php
 
-Route::post('actionlog/bundle','\WoXuanWang\ActionLog\Controllers\ActionLogController@bundle');
-Route::resource('actionlog', '\WoXuanWang\ActionLog\Controllers\ActionLogController');
+Route::post('action-log/bundle','\$NAME$\ActionLog\Controllers\ActionLogController@bundle');
+Route::resource('action-log', '\$NAME$\ActionLog\Controllers\ActionLogController');

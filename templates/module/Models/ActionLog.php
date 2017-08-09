@@ -1,13 +1,11 @@
-<?php
-
-namespace WoXuanWang\ActionLog\Models;
+<?php namespace $NAME$\ActionLog\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use WoXuanWang\User\Models\Admin;
+use $NAME$\User\Models\Admin;
 
 /**
  * Class ActionLog
- * @package WoXuanWang\ActionLog\Models
+ * @package $NAME$\ActionLog\Models
  * @version December 26, 2016, 5:37 am UTC
  */
 class ActionLog extends Model

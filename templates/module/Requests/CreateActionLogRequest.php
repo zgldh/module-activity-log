@@ -1,9 +1,7 @@
-<?php
+<?php namespace $NAME$\ActionLog\Requests;
 
-namespace WoXuanWang\ActionLog\Requests;
-
+use $NAME$\ActionLog\Models\ActionLog;
 use Illuminate\Foundation\Http\FormRequest;
-use WoXuanWang\ActionLog\Models\ActionLog;
 use zgldh\Scaffold\Traits\HasWithParameter;
 
 class CreateActionLogRequest extends FormRequest

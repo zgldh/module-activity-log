@@ -1,13 +1,11 @@
-<?php namespace WoXuanWang\ActionLog\Controllers;
+<?php namespace $NAME$\ActionLog\Controllers;
 
 use App\Http\Requests\IndexRequest;
 use App\Http\Requests\ShowRequest;
-use WoXuanWang\ActionLog\Requests\CreateActionLogRequest;
-use WoXuanWang\ActionLog\Requests\UpdateActionLogRequest;
+use $NAME$\ActionLog\Requests\CreateActionLogRequest;
+use $NAME$\ActionLog\Requests\UpdateActionLogRequest;
+use $NAME$\ActionLog\Repositories\ActionLogRepository;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use WoXuanWang\ActionLog\Repositories\ActionLogRepository;
-use Yajra\Datatables\Facades\Datatables;
 use zgldh\Scaffold\AppBaseController;
 
 class ActionLogController extends AppBaseController

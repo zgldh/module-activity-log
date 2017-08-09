@@ -114,7 +114,7 @@
                       label="Type"
                       :sortable="false"
                       show-overflow-tooltip
-                      width="180">
+                      width="100">
               </el-table-column>
               <el-table-column
                       prop="content"
@@ -123,34 +123,35 @@
                       show-overflow-tooltip>
               </el-table-column>
               <el-table-column
-                      prop="ip"
-                      label="IP"
-                      :sortable="false"
-                      show-overflow-tooltip>
-              </el-table-column>
-              <el-table-column
                       prop="user_agent"
                       label="Agent"
                       :sortable="false"
-                      show-overflow-tooltip>
+                      show-overflow-tooltip
+                      width="240">
+              </el-table-column>
+              <el-table-column
+                      prop="ip"
+                      label="IP"
+                      :sortable="false"
+                      show-overflow-tooltip
+                      width="100">
               </el-table-column>
               <el-table-column
                       prop="created_at"
                       label="Created At"
                       sortable="custom"
                       searchable="false"
-                      show-overflow-tooltip>
+                      show-overflow-tooltip
+                      width="190">
               </el-table-column>
               <el-table-column
                       fixed="right"
                       label="操作"
-                      width="150">
+                      width="100">
                 <template scope="scope">
                   <el-button-group>
                     <el-button @click="onViewClick(scope.row,scope.column,scope.$index,scope.store)" type="default"
                                size="small" icon="view" title="查看"></el-button>
-                    <el-button @click="onDeleteClick(scope.row,scope.column,scope.$index,scope.store)" type="danger"
-                               size="small" icon="delete" title="删除"></el-button>
                   </el-button-group>
                 </template>
               </el-table-column>

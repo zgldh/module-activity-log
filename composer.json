@@ -1,7 +1,7 @@
 {
   "name": "zgldh/module-action-log",
   "description": "Action Log Module for zgldh/scaffold",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "keywords": [
     "laravel",
     "scaffold",
@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "require": {
-    "zgldh/scaffold": "^0.3.8",
+    "zgldh/scaffold": "^0.3.10",
     "jenssegers/agent": "^2.5"
   },
   "require-dev": {

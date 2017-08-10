@@ -38,7 +38,7 @@
                 <el-input v-model="searchForm.ip" placeholder="Ip" column="ip" operator="like"></el-input>
               </el-form-item>
               <el-form-item label="Agent">
-                <el-input v-model="searchForm.user_agent" placeholder="User_agent" column="user_agent"
+                <el-input v-model="searchForm.user_agent" placeholder="User Agent" column="user_agent"
                           operator="like"></el-input>
               </el-form-item>
               <el-form-item label="Created At">
@@ -144,17 +144,6 @@
                       show-overflow-tooltip
                       width="190">
               </el-table-column>
-              <el-table-column
-                      fixed="right"
-                      label="操作"
-                      width="100">
-                <template scope="scope">
-                  <el-button-group>
-                    <el-button @click="onViewClick(scope.row,scope.column,scope.$index,scope.store)" type="default"
-                               size="small" icon="view" title="查看"></el-button>
-                  </el-button-group>
-                </template>
-              </el-table-column>
             </el-table>
           </div>
         </div>
@@ -191,9 +180,6 @@
       return data;
     },
     methods: {
-      onViewClick: function (row, column, $index, store) {
-        return window.open(row.url);
-      }
     }
   };
 

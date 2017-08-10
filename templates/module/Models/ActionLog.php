@@ -13,6 +13,13 @@ class ActionLog extends Model
 
     public $table = 'action_logs';
 
+    const TYPE_LOGIN = 'login';
+    const TYPE_LOGOUT = 'logout';
+    const TYPE_SEARCH = 'search';
+    const TYPE_DELETE = 'delete';
+    const TYPE_UPDATE = 'update';
+    const TYPE_CREATE = 'create';
+    const TYPE_SHOW = 'show';
 
     public $fillable = [
         'type',

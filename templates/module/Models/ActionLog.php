@@ -1,6 +1,7 @@
 <?php namespace $NAME$\ActionLog\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use $NAME$\ActionLog\Repositories\ActionLogRepository;
 use $NAME$\User\Models\User;
 
 /**
@@ -55,5 +56,10 @@ class ActionLog extends Model
     public function user()
     {
         return $this->hasOne(User::class, 'created_by', 'id');
+    }
+
+    public static function log($type, $moduleName, $admin = null, $otherContent = null)
+    {
+        return ActionLogRepository::log($type, $moduleName, $admin, $otherContent);
     }
 }

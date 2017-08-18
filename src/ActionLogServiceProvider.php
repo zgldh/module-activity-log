@@ -27,5 +27,6 @@ class ActionLogServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadTranslationsFrom(resource_path('lang/vendor/module-action-log'), 'module-action-log');
     }
 }

@@ -22,6 +22,7 @@ class ActionLogServiceProvider extends \zgldh\ModuleActionLog\ActionLogServicePr
     public function boot()
     {
         //
+        parent::boot();
         $this->loadViewsFrom(__DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'views',
             '$NAME$\ActionLog');
     }

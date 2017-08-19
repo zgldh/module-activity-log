@@ -18,7 +18,7 @@
     "classmap": [
     ],
     "psr-4": {
-      "zgldh\\ModuleActionLog\\": "src/"
+      "zgldh\\ModuleActivityLog\\": "src/"
     }
   },
   "autoload-dev": {

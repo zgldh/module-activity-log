@@ -1,2 +1,2 @@
-# module-action-log
-Action Log Module for zgldh/scaffold
+# module-activity-log
+Activity Log Module for zgldh/scaffold

@@ -27,18 +27,11 @@
         <div class="box-body datatable-loading-section">
           <div class="search">
             <el-form :inline="true" :model="searchForm" ref="searchForm">
-              <el-form-item label="Type">
-                <el-input v-model="searchForm.type" placeholder="Type" column="type" operator="like"></el-input>
+              <el-form-item label="Subject">
+                <el-input v-model="searchForm.subject" placeholder="Subject" column="subject" operator="like"></el-input>
               </el-form-item>
-              <el-form-item label="Content">
-                <el-input v-model="searchForm.content" placeholder="Content" column="content"
-                          operator="like"></el-input>
-              </el-form-item>
-              <el-form-item label="Ip">
-                <el-input v-model="searchForm.ip" placeholder="Ip" column="ip" operator="like"></el-input>
-              </el-form-item>
-              <el-form-item label="Agent">
-                <el-input v-model="searchForm.user_agent" placeholder="User Agent" column="user_agent"
+              <el-form-item label="Description">
+                <el-input v-model="searchForm.description" placeholder="Description" column="description"
                           operator="like"></el-input>
               </el-form-item>
               <el-form-item label="Created At">
@@ -110,31 +103,17 @@
                     ref="table"
             >
               <el-table-column
-                      prop="type"
-                      label="Type"
+                      prop="subject"
+                      label="Subject"
                       :sortable="false"
                       show-overflow-tooltip
                       width="100">
               </el-table-column>
               <el-table-column
-                      prop="content"
-                      label="Content"
+                      prop="description"
+                      label="Description"
                       :sortable="false"
                       show-overflow-tooltip>
-              </el-table-column>
-              <el-table-column
-                      prop="user_agent"
-                      label="Agent"
-                      :sortable="false"
-                      show-overflow-tooltip
-                      width="240">
-              </el-table-column>
-              <el-table-column
-                      prop="ip"
-                      label="IP"
-                      :sortable="false"
-                      show-overflow-tooltip
-                      width="100">
               </el-table-column>
               <el-table-column
                       prop="created_at"
@@ -165,15 +144,13 @@
     mixins: [mixin],
     data: function () {
       let data = {
-        resource: '/action-log',
+        resource: '/activity-log',
         datatablesParameters: {
           order: [{column: 'created_at', dir: 'desc'}],
         },
         searchForm: {
-          type: null,
-          content: null,
-          ip: null,
-          user_agent: null,
+          subject: null,
+          description: null,
           created_at: null
         }
       };

@@ -1,4 +1,4 @@
 <?php
 
-Route::post('action-log/bundle','\$NAME$\ActionLog\Controllers\ActionLogController@bundle');
-Route::resource('action-log', '\$NAME$\ActionLog\Controllers\ActionLogController');
+Route::post('activity-log/bundle','\$NAME$\ActivityLog\Controllers\ActivityLogController@bundle');
+Route::resource('activity-log', '\$NAME$\ActivityLog\Controllers\ActivityLogController');

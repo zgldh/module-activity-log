@@ -1,4 +1,4 @@
-<?php namespace zgldh\ModuleActionLog;
+<?php namespace zgldh\ModuleActivityLog;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
  * Date: 11/14/2016
  * Time: 2:00 PM
  */
-class ActionLogServiceProvider extends ServiceProvider
+class ActivityLogServiceProvider extends ServiceProvider
 {
 
     /**
@@ -27,6 +27,6 @@ class ActionLogServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(resource_path('lang/vendor/module-action-log'), 'module-action-log');
+        $this->loadTranslationsFrom(resource_path('lang/vendor/module-activity-log'), 'module-activity-log');
     }
 }

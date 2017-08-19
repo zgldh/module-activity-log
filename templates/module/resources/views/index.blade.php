@@ -6,5 +6,5 @@
 @endsection
 
 @section('scripts')
-    @dist('action-log.list')
+    @dist('activity-log.list')
 @endsection

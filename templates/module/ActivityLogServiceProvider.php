@@ -1,6 +1,6 @@
-<?php namespace $NAME$\ActionLog;
+<?php namespace $NAME$\ActivityLog;
 
-class ActionLogServiceProvider extends \zgldh\ModuleActionLog\ActionLogServiceProvider
+class ActivityLogServiceProvider extends \zgldh\ModuleActivityLog\ActivityLogServiceProvider
 {
 
     /**
@@ -24,6 +24,6 @@ class ActionLogServiceProvider extends \zgldh\ModuleActionLog\ActionLogServicePr
         //
         parent::boot();
         $this->loadViewsFrom(__DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'views',
-            '$NAME$\ActionLog');
+            '$NAME$\ActivityLog');
     }
 }

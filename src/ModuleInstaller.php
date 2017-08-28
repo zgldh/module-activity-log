@@ -26,7 +26,7 @@ class ModuleInstaller extends BaseInstaller
         $this->addRoute('ActivityLog');
         $this->addToVueRoute('ActivityLog');
         $this->addAdminMenuItem($this->getModuleTemplateContent('menu.blade.php'));
-        $this->copyLanguageFiles('module-activity-log');
+        $this->copyLanguageFiles('module_activity_log');
 
         // Dependencies
         Utils::addServiceProvider('Spatie\Activitylog\ActivitylogServiceProvider::class');

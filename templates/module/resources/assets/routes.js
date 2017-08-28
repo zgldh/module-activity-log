@@ -1,3 +1,3 @@
 export default [
-  {path: '/activity-log', component: () => System.import('./ListPage.vue')},
+  {path: '/activity_log', component: () => System.import('./ListPage.vue')},
 ];

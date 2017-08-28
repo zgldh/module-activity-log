@@ -144,7 +144,7 @@
     mixins: [mixin],
     data: function () {
       let data = {
-        resource: '/activity-log',
+        resource: '/activity_log',
         datatablesParameters: {
           order: [{column: 'created_at', dir: 'desc'}],
         },

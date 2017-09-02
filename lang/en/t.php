@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'name' => "Activity Log Management"
+    'title' => "Activity Log"
 ];

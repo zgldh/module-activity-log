@@ -2,15 +2,15 @@
   <div class="admin-list-page">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>操作记录
-        <small>列表</small>
+      <h1>{{$t('module_activity_log.title')}}
+        <small>{{$t('scaffold.terms.list')}}</small>
       </h1>
       <ol class="breadcrumb">
         <li>
-          <router-link to="/"><i class="fa fa-dashboard"></i> 总览</router-link>
+          <router-link to="/"><i class="fa fa-dashboard"></i> {{$t('module_dashboard.title')}}</router-link>
         </li>
-        <li><a href="#">操作记录</a></li>
-        <li class="active">列表</li>
+        <li><a href="#">{{$t('module_activity_log.title')}}</a></li>
+        <li class="active">{{$t('scaffold.terms.list')}}</li>
       </ol>
     </section>
 
@@ -18,17 +18,18 @@
     <section class="content">
 
       <div class="box">
-        <div class="box-header with-border">
-          <div class="buttons">
-          </div>
-        </div>
+        <!--<div class="box-header with-border">-->
+        <!--<div class="buttons">-->
+        <!--</div>-->
+        <!--</div>-->
         <!-- /.box-header -->
         <!-- form start -->
         <div class="box-body datatable-loading-section">
           <div class="search">
             <el-form :inline="true" :model="searchForm" ref="searchForm">
               <el-form-item label="Subject">
-                <el-input v-model="searchForm.subject" placeholder="Subject" column="subject" operator="like"></el-input>
+                <el-input v-model="searchForm.subject" placeholder="Subject" column="subject"
+                          operator="like"></el-input>
               </el-form-item>
               <el-form-item label="Description">
                 <el-input v-model="searchForm.description" placeholder="Description" column="description"
@@ -38,7 +39,6 @@
                 <el-date-picker
                         v-model="searchForm.created_at"
                         type="daterange"
-                        placeholder="选择日期范围"
                         clearable
                         column="created_at"
                         operator="range">
@@ -47,8 +47,8 @@
 
               <el-form-item>
                 <el-button-group>
-                  <el-button type="primary" @click="onSubmitSearch">查询</el-button>
-                  <el-button type="button" @click="onResetSearch">清空</el-button>
+                  <el-button type="primary" @click="onSubmitSearch">{{$t('scaffold.terms.search_submit')}}</el-button>
+                  <el-button type="button" @click="onResetSearch">{{$t('scaffold.terms.search_reset')}}</el-button>
                 </el-button-group>
               </el-form-item>
             </el-form>
@@ -58,7 +58,7 @@
             <!-- 采用 datatables 标准-->
             <el-row class="tools">
               <el-col :span="4">
-                <span class="page-size">显示
+                <span class="page-size">{{$t('scaffold.terms.page_size_show')}}
                 <el-select v-model="pagination.pageSize" style="width: 80px"
                            @change="onPageSizeChange">
                   <el-option
@@ -68,7 +68,7 @@
                           :value="item.value">
                   </el-option>
                 </el-select>
-                  项结果</span>
+                  {{$t('scaffold.terms.page_size_items')}}</span>
               </el-col>
               <el-col :span="12">
                 <el-pagination
@@ -81,7 +81,7 @@
               </el-col>
               <el-col :span="8">
                 <el-input class="auto-search" style="width: 200px;float: right;"
-                          placeholder="模糊搜索"
+                          :placeholder="$t('scaffold.terms.auto_search')"
                           v-model="datatablesParameters.search.value"
                           :icon="datatablesParameters.search.value?'close':'search'"
                           :on-icon-click="onAutoSearchIconClick"
@@ -138,10 +138,14 @@
 </template>
 
 <script type="javascript">
-  import {mixin} from "resources/assets/js/commons/ListHelpers.js";
+  import { mixin } from "resources/assets/js/commons/ListHelpers.js";
+  import { loadModuleLanguage } from 'resources/assets/js/commons/LanguageHelper';
 
   export default {
-    mixins: [mixin],
+    mixins: [
+      mixin,
+      loadModuleLanguage('module_activity_log')
+    ],
     data: function () {
       let data = {
         resource: '/activity_log',
@@ -156,8 +160,7 @@
       };
       return data;
     },
-    methods: {
-    }
+    methods: {}
   };
 
 </script>

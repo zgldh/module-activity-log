@@ -1,7 +1,7 @@
 {
   "name": "zgldh/module-activity-log",
   "description": "Activity Log Module for zgldh/scaffold",
-  "version": "0.4.1",
+  "version": "0.5.1",
   "keywords": [
     "laravel",
     "scaffold",
@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "require": {
-    "zgldh/scaffold": "^0.4.1",
+    "zgldh/scaffold": "^0.5.1",
     "spatie/laravel-activitylog": "*"
   },
   "require-dev": {

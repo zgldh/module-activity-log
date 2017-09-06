@@ -1,7 +1,7 @@
 {
   "name": "zgldh/module-activity-log",
   "description": "Activity Log Module for zgldh/scaffold",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "keywords": [
     "laravel",
     "scaffold",

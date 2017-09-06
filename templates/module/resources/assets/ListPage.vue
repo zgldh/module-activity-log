@@ -27,23 +27,23 @@
         <div class="box-body datatable-loading-section">
           <div class="search">
             <el-form :inline="true" :model="searchForm" ref="searchForm">
-              <el-form-item label="Subject">
-                <el-input v-model="searchForm.subject_type" placeholder="Subject" column="subject_type"
+              <el-form-item :label="$t('module_activity_log.models.activity_log.fields.subject_type')">
+                <el-input v-model="searchForm.subject_type" column="subject_type"
                           operator="like"></el-input>
               </el-form-item>
-              <el-form-item label="Subject ID">
-                <el-input v-model="searchForm.subject_id" placeholder="Subject ID" column="subject_id"
+              <el-form-item :label="$t('module_activity_log.models.activity_log.fields.subject_id')">
+                <el-input v-model="searchForm.subject_id" column="subject_id"
                           operator="="></el-input>
               </el-form-item>
-              <el-form-item label="Description">
-                <el-input v-model="searchForm.description" placeholder="Description" column="description"
+              <el-form-item :label="$t('module_activity_log.models.activity_log.fields.description')">
+                <el-input v-model="searchForm.description" column="description"
                           operator="like"></el-input>
               </el-form-item>
-              <el-form-item label="Causer ID">
-                <el-input v-model="searchForm.causer_id" placeholder="Causer ID" column="causer_id"
+              <el-form-item :label="$t('module_activity_log.models.activity_log.fields.causer_id')">
+                <el-input v-model="searchForm.causer_id" column="causer_id"
                           operator="="></el-input>
               </el-form-item>
-              <el-form-item label="Created At">
+              <el-form-item :label="$t('scaffold.fields.created_at')">
                 <el-date-picker
                         v-model="searchForm.created_at"
                         type="daterange"
@@ -112,33 +112,33 @@
             >
               <el-table-column
                       prop="subject_id"
-                      label="Subject ID"
+                      :label="$t('module_activity_log.models.activity_log.fields.subject_id')"
                       :sortable="false"
                       show-overflow-tooltip
                       width="120">
               </el-table-column>
               <el-table-column
                       prop="subject_type"
-                      label="Subject"
+                      :label="$t('module_activity_log.models.activity_log.fields.subject_type')"
                       :sortable="false"
                       show-overflow-tooltip>
               </el-table-column>
               <el-table-column
                       prop="description"
-                      label="Description"
+                      :label="$t('module_activity_log.models.activity_log.fields.description')"
                       :sortable="false"
                       show-overflow-tooltip>
               </el-table-column>
               <el-table-column
                       prop="causer_id"
-                      label="Causer ID"
+                      :label="$t('module_activity_log.models.activity_log.fields.causer_id')"
                       :sortable="true"
                       show-overflow-tooltip
                       width="130">
               </el-table-column>
               <el-table-column
                       prop="created_at"
-                      label="Created At"
+                      :label="$t('scaffold.fields.created_at')"
                       sortable="custom"
                       searchable="false"
                       show-overflow-tooltip

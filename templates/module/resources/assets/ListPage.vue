@@ -28,12 +28,20 @@
           <div class="search">
             <el-form :inline="true" :model="searchForm" ref="searchForm">
               <el-form-item label="Subject">
-                <el-input v-model="searchForm.subject" placeholder="Subject" column="subject"
+                <el-input v-model="searchForm.subject_type" placeholder="Subject" column="subject_type"
                           operator="like"></el-input>
+              </el-form-item>
+              <el-form-item label="Subject ID">
+                <el-input v-model="searchForm.subject_id" placeholder="Subject ID" column="subject_id"
+                          operator="="></el-input>
               </el-form-item>
               <el-form-item label="Description">
                 <el-input v-model="searchForm.description" placeholder="Description" column="description"
                           operator="like"></el-input>
+              </el-form-item>
+              <el-form-item label="Causer ID">
+                <el-input v-model="searchForm.causer_id" placeholder="Causer ID" column="causer_id"
+                          operator="="></el-input>
               </el-form-item>
               <el-form-item label="Created At">
                 <el-date-picker
@@ -103,17 +111,30 @@
                     ref="table"
             >
               <el-table-column
-                      prop="subject"
-                      label="Subject"
+                      prop="subject_id"
+                      label="Subject ID"
                       :sortable="false"
                       show-overflow-tooltip
-                      width="100">
+                      width="120">
+              </el-table-column>
+              <el-table-column
+                      prop="subject_type"
+                      label="Subject"
+                      :sortable="false"
+                      show-overflow-tooltip>
               </el-table-column>
               <el-table-column
                       prop="description"
                       label="Description"
                       :sortable="false"
                       show-overflow-tooltip>
+              </el-table-column>
+              <el-table-column
+                      prop="causer_id"
+                      label="Causer ID"
+                      :sortable="true"
+                      show-overflow-tooltip
+                      width="130">
               </el-table-column>
               <el-table-column
                       prop="created_at"
@@ -138,8 +159,8 @@
 </template>
 
 <script type="javascript">
-  import { mixin } from "resources/assets/js/commons/ListHelpers.js";
-  import { loadModuleLanguage } from 'resources/assets/js/commons/LanguageHelper';
+  import {mixin} from "resources/assets/js/commons/ListHelpers.js";
+  import {loadModuleLanguage} from 'resources/assets/js/commons/LanguageHelper';
 
   export default {
     mixins: [
